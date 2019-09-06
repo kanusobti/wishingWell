@@ -1,7 +1,11 @@
-// import React, { Component} from 'react';
+import React from 'react';
 
-// class App extends
+const Header = () => {
+    return(
+        <h1>Serve me your wish</h1>
+    )
+}
 
 
 
-// export default Header;
+export default Header;
