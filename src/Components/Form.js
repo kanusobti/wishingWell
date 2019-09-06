@@ -11,12 +11,16 @@ class Form extends Component{
             value={this.props.formName}
             placeholder="enter your name please"
             />
-            <input
+            <textarea
             name="wish"
             onChange={this.props.updateForm}
             type="text"
             value={this.props.formText}
             placeholder="what do you wish for?"
+            rows="20"
+            cols="30"
+            maxLength="300"
+            
             />
             {/* <button onclick={this.handleSubmit}>Submit</button> */}
             <button onClick={this.props.submitForm}>Send</button>
