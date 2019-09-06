@@ -34,17 +34,17 @@ class App extends Component {
       //lets define a new variable called newState and give it an empty array where data will be pushed to.
       const newState= [];
       
-      ////for each object (id) from firebase , separate each item and give them name i.e uniqueKey, name & userWish
-      for (let id in response) {
+      ////for each object (id) from firebase , separate each item and give them name i.e uniqueKey, personName & wish
+      for (let uniqueKey in response) {
         console.log(response);
-        console.log(id);
-        console.log(response[id]);
+        console.log(uniqueKey);
+        console.log(response[uniqueKey]);
         //now we push each of these to the newState array.
         //use unshift and not push because push will add the data to the end whereas unshift would add it on the top.
-        newState.push({
-          uniqueKey: id,
-          name: response[id].name,
-          userWish: response[id].userWish,
+        newState.unshift({
+          uniqueKey: uniqueKey,
+          personName: response[uniqueKey].personName,
+          wish: response[uniqueKey].wish,
         })
       }
       this.setState({
@@ -80,10 +80,10 @@ console.log(newState)
     }else{
       alert("Your wish is granted!")
       const dbRef = firebase.database().ref();
-      ///push the name and userWish values and push them to firebase
+      ///push the personName and wish values and push them to firebase
       dbRef.push({
-        name: this.state.personName,
-        userWish:this.state.wish,
+        personName: this.state.personName,
+        wish:this.state.wish,
       });
   
       console.log(this.state.personName);
@@ -128,11 +128,12 @@ console.log(newState)
       {this.state.wishList.map( (grantedWish) => {
         return(
           <li>
-          <p>{grantedWish.id}</p>
-          <p>Dear {grantedWish.name}</p>
-          <p>Your wish: {grantedWish.userWish}</p>
+          {/* <p>{grantedWish.uniqueKey}</p> */}
+          <p>Dear {grantedWish.personName}</p>
+          <p>Your wish: {grantedWish.wish}</p>
           <p>Guess, what! Your wish is granted.</p>
-          <button onClick={() => this.removeButton(grantedWish.uniqueKey)}>Remove Button</button>
+          <LikeButton />
+          <button onClick={() => this.removeButton(grantedWish.uniqueKey)}>Remove</button>
           </li>
         
         )
