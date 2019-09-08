@@ -1,3 +1,44 @@
-p{
-    border:1px solid red;
+body{
+    background: linear-gradient(180deg, #70e1f5, #ffd194);
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+    @-webkit-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+}
+
+header{
+    height:100vh;
+    background: url(../Assets/2194-1024.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.formWrapper {
+    display: flex;
+    background: url(../Assets/wall-435372.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    padding: 50px;
+    box-shadow: 10px 10px 0px $mainHeadingColor;
+    border: 2px solid $mainHeadingColor;
+}
+
+ul{
+    background: url(../Assets/wall-435372.png);
 }

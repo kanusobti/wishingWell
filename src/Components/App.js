@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import firebase from '../firebase';
 import Header from './Header';
-import Form from './Form';
+// import Form from './Form';
 import LikeButton from './LikeButton';
 import '../Styles/App.scss';
 import { thisExpression } from '@babel/types';
@@ -13,7 +13,7 @@ class App extends Component {
       ///Firebase stores data in this empty array
       wishList : [],
       personName : '',
-      wish : '',
+      wish : ''
       
     }
    
@@ -39,6 +39,7 @@ class App extends Component {
         console.log(response);
         console.log(uniqueKey);
         console.log(response[uniqueKey]);
+        
         //now we push each of these to the newState array.
         //use unshift and not push because push will add the data to the end whereas unshift would add it on the top.
         newState.unshift({
@@ -78,7 +79,7 @@ console.log(newState)
       
       alert("Please fill out all the fields!")
     }else{
-      alert("Your wish is granted!")
+      alert("Guess what! Your wish is granted!")
       const dbRef = firebase.database().ref();
       ///push the personName and wish values and push them to firebase
       dbRef.push({
@@ -111,29 +112,27 @@ console.log(newState)
     return (
       ///everything in this div would be displayed on the screen
       <div className="App">
-        <Header />
-        <div className="formWrapper">
-          <p className="description">
-          Law of Attraction works on the basis of clean energy and clear intentions. Sit back and think about what you want to attract into your life. Clarify your goal(s). Once you know and feel what you want, share it anonymously.  
-          </p>
-        </div>
-       <Form 
+        <Header
        formName = {this.state.personName}
        formText = {this.state.wish}
        updateForm = {this.handleChange}
        submitForm = {this.handleSubmit}
-       />
+        
+        />
+       
+       
+      
        <ul>
        {/* //map over each grantedWish . For each grantedWish, return all these things */}
       {this.state.wishList.map( (grantedWish) => {
         return(
-          <li>
+          <li key={grantedWish.uniqueKey}>
           {/* <p>{grantedWish.uniqueKey}</p> */}
-          <p>Dear {grantedWish.personName}</p>
-          <p>Your wish: {grantedWish.wish}</p>
-          <p>Guess, what! Your wish is granted.</p>
+          <p className="recipient">Dear {grantedWish.personName}</p>
+          <p className="content">Your wish: {grantedWish.wish}</p>
+          <p className="status">Status : Granted.</p>
           <LikeButton />
-          <button onClick={() => this.removeButton(grantedWish.uniqueKey)}>Remove</button>
+          <button onClick={() => this.removeButton(grantedWish.uniqueKey)}><i className="far fa-times-circle"></i></button>
           </li>
         
         )

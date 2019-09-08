@@ -1,0 +1,32 @@
+$baseFont: 'Poppins', sans-serif;
+$headingFont: 'Ranga', cursive;
+$baseColor:black;
+$mainHeadingColor:rebeccapurple;
+
+
+img{
+    max-width:100%;
+    height:auto;
+    border:0;
+    display:block;
+    width:100%;
+}
+.wrapper{
+    max-width: 1280px;
+    margin:0 auto;
+    width:90%;
+    // float:right;
+}
+h1 {
+    padding: 25px 0;
+    color:$mainHeadingColor;
+    font-family: $headingFont;
+    font-weight: 700;
+    font-size: 100px;
+    margin: 0;
+    text-shadow: -9px 1px 2px #b4a6a6;
+}
+.clearfix{
+    width:50%;
+    float:right;
+}
