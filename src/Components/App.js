@@ -86,6 +86,7 @@ console.log(newState)
       dbRef.push({
         personName: this.state.personName,
         wish:this.state.wish,
+        like: 0,
       });
   
       console.log(this.state.personName);
@@ -131,13 +132,16 @@ console.log(newState)
       {this.state.wishList.map( (grantedWish) => {
         return(
           <li key={grantedWish.uniqueKey}>
+          
           {/* <p>{grantedWish.uniqueKey}</p> */}
           <p className="recipient">Dear {grantedWish.personName}</p>
           <p className="content">Your wish: {grantedWish.wish}</p>
           <p className="status">Status : Granted.</p>
-          <LikeButton /> 
-          {/* <button onClick={() => this.addLike(grantedWish.uniqueKey)}><i className="far fa-heart"></i></button> */}
+          <LikeButton 
+          likeId={grantedWish.uniqueKey} likeCount={grantedWish.like}
+          /> 
           <button onClick={() => this.removeButton(grantedWish.uniqueKey)}><i className="far fa-times-circle"></i></button>
+          
           </li>
         
         )

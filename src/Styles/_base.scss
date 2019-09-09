@@ -50,25 +50,6 @@ input, textarea{
     color:$formColor;
 }
 
-ul {
-    max-width: 1000px;
-    margin: 0 auto;
-    margin-bottom: 100px;
-    column-count: 3;
-    column-gap: 10px;
-  } 
-  
-  li {
-    background:transparent;
-    margin-bottom: 20px;
-    width: 300px;
-    height: 100%;
-    padding: 15px;
-    // page-break-inside: avoid;
-    // break-inside: avoid-column;
-    display: inline-block;
-    border: solid 1px $mainHeadingColor;
-    border-radius:5%;
-  } 
+
   
 
