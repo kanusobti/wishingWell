@@ -34,11 +34,69 @@ header{
     background-position: center;
     background-repeat: no-repeat;
     margin: 0 auto;
-    padding: 50px;
+    padding: 10%;
     box-shadow: 10px 10px 0px $mainHeadingColor;
     border: 2px solid $mainHeadingColor;
+    // p{
+    //     padding-top: 7%;
+    // }
 }
 
-ul{
-    background: url(../Assets/wall-435372.png);
+.overlay{
+    background: rgba(0, 0, 0, 0.2);
 }
+
+.description {
+    line-height: 1.5;
+    border-right: 2px solid $baseColor;
+    margin: 0;
+    font-family: $wallFont;
+    color: $formColor;
+    // margin-right:2%;
+  }
+
+  span{
+      text-transform:uppercase;
+  }
+  
+.clearfix{
+    float:right;
+    width:50%;
+}
+
+.form{
+    margin-left:2%;
+}
+input[name="personName"] {
+    padding: 10px 0;
+    border-radius: 0;
+}
+
+.send{
+    width: 100px;
+    margin: 0 auto;
+    background: $mainHeadingColor;
+    border: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    color:$formColor;
+    font-family: $baseFont;
+    &:hover,
+    &:focus{
+        color:$mainHeadingColor;
+        background: #c28c8c;
+    }
+    &:active{
+         border: 2px solid $formColor;
+          
+    }
+}
+input::placeholder,
+textarea::placeholder{
+    background: $formColor;
+    color: $baseColor;
+
+}
+
+
+

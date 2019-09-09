@@ -8,8 +8,7 @@ class Header extends Component{
                     <div className="clearfix">
                         <h1>Serve me your wish</h1>
                         <div className="formWrapper">
-                            <p className="description">Law of Attraction works on the basis of clean energy and clear intentions. Sit back and think about what you want to attract into your life. Clarify your goal(s). Once you know and feel what you want, share it anonymously.</p>
-                            {/* <img src="../Assets/23210.jpg" /> */}
+                            <p className="description overlay">Law of Attraction works on the basis of clean energy and clear intentions. Sit back and think about what you want to attract into your life. Once you know what you want, <span>wish</span> for it anonymously.</p>
                             <form action = "" className="form">
                                 <input 
                                 name = "personName"
@@ -24,13 +23,13 @@ class Header extends Component{
                                 type="text"
                                 value={this.props.formText}
                                 placeholder="what do you wish for?"
-                                rows="20"
-                                cols="30"
+                                rows="10"
+                                cols="20"
                                 maxLength="300"
 
                                 />
                                 {/* <button onclick={this.handleSubmit}>Submit</button> */}
-                                <button onClick={this.props.submitForm}>Send</button>
+                                <button className="send" onClick={this.props.submitForm}>Send</button>
                             </form>
 
                         </div>

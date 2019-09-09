@@ -46,6 +46,7 @@ class App extends Component {
           uniqueKey: uniqueKey,
           personName: response[uniqueKey].personName,
           wish: response[uniqueKey].wish,
+          like: response[uniqueKey].like,
         })
       }
       this.setState({
@@ -107,6 +108,9 @@ console.log(newState)
     dbRef.child(wishListRemove).remove();
   };
 
+  // addLike=()=>{
+  // firebase.database().ref(`uniqueKey`).update({this.state.like}
+  // }
 
   render() {
     return (
@@ -131,7 +135,8 @@ console.log(newState)
           <p className="recipient">Dear {grantedWish.personName}</p>
           <p className="content">Your wish: {grantedWish.wish}</p>
           <p className="status">Status : Granted.</p>
-          <LikeButton />
+          <LikeButton /> 
+          {/* <button onClick={() => this.addLike(grantedWish.uniqueKey)}><i className="far fa-heart"></i></button> */}
           <button onClick={() => this.removeButton(grantedWish.uniqueKey)}><i className="far fa-times-circle"></i></button>
           </li>
         
