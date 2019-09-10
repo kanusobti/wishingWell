@@ -19,7 +19,7 @@ class Header extends Component{
                                 onChange={this.props.updateForm}
                                 type="text"
                                 value={this.props.formName}
-                                placeholder="enter your name please"
+                                placeholder="enter your name"
                                 />
                                 <textarea
                                 name="wish"
