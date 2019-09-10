@@ -14,32 +14,32 @@ class Header extends Component{
                         <div className="formWrapper">
                             <p className="description overlay">Law of Attraction works on the basis of clean energy and clear intentions. Sit back and think about what you want to attract into your life. Once you know what you want, <span>wish</span> for it anonymously.</p>
                             <form action = "" className="form">
+                                <label for ="personName" class="visuallyHidden">Person Name</label>
                                 <input 
                                 name = "personName"
                                 onChange={this.props.updateForm}
                                 type="text"
                                 value={this.props.formName}
                                 placeholder="enter your name"
+                                id = "personName"
                                 />
+                                <label for ="wish" class="visuallyHidden">Wish</label>
                                 <textarea
                                 name="wish"
                                 onChange={this.props.updateForm}
                                 type="text"
                                 value={this.props.formText}
                                 placeholder="what do you wish for?"
+                                id="wish"
                                 rows="10"
                                 cols="20"
                                 maxLength="300"
-
                                 />
                                 {/* <button onclick={this.handleSubmit}>Submit</button> */}
                                 <button className="send" onClick={this.props.submitForm}>Send</button>
                             </form>
-
                         </div>
-
                     </div>
-
                 </div>
             </header>
         )

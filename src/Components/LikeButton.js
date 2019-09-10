@@ -24,8 +24,7 @@ class LikeButton extends Component {
     render(){
         return(
             <button className="likes" onClick={this.likeButton}><i className="fa fa-heart"></i>{this.props.likeCount}</button>
-            
-            
+                
         )
     }
 }

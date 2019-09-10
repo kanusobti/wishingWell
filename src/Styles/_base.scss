@@ -4,7 +4,6 @@ $baseColor:black;
 $mainHeadingColor:#ffe791;
 $formColor: white;
 
-
 img{
     max-width:100%;
     height:auto;
@@ -12,13 +11,14 @@ img{
     display:block;
     width:100%;
 }
+
 .wrapper{
     max-width: 1280px;
     margin:0 auto;
     width:90%;
 }
 
-h1, body, ul, li, p, div{
+h1, body, ul, li, p, div, section{
     margin:0;
     padding:0;
     list-style:none;
