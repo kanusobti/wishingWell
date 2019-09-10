@@ -8,7 +8,7 @@ class Header extends Component{
                 <h1>Serve me your wish</h1>
                 <div className="wrapper">
                     <div className="wellImage">
-                        <img src={Image} alt="an image of well with a pitcher aside it" />
+                        <img src={Image} alt="a well with a pitcher aside it" />
                     </div>
                     <div className="rightSideHeader">
                         <div className="formWrapper">
