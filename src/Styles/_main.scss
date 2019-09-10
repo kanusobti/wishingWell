@@ -96,7 +96,7 @@ input[name="personName"], textarea {
 
 input::placeholder,
 textarea::placeholder{
-    background: $formColor;
+    // background: $formColor;
     color: $baseColor;
 }
 
