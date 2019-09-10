@@ -1,7 +1,6 @@
 import React, { Component} from 'react';
 import firebase from '../firebase';
 import Header from './Header';
-// import Form from './Form';
 import LikeButton from './LikeButton';
 import '../Styles/App.scss';
 import { thisExpression } from '@babel/types';
@@ -23,7 +22,7 @@ class App extends Component {
   componentDidMount () {
     ///Refer to your database and store your data as a variable 
     const dbRef = firebase.database().ref();
-//retrieve the existing data from firebase
+    //retrieve the existing data from firebase
     dbRef.on('value', data => {
       console.log(data);
       ///the above data gives me the whole data of a big object. now we need to extract the value we want from it using .val 
@@ -52,10 +51,9 @@ class App extends Component {
       this.setState({
         wishList: newState,
       })
-console.log(newState)
+      console.log(newState)
     });
     
-
   }
   ///ComponentDidMount ends here
 
@@ -75,11 +73,15 @@ console.log(newState)
     event.preventDefault();
     console.log("submitted");
 
-    if(!this.state.personName || !this.state.wish) {
-      // const errorMessage = "Please fill out all the fields!"
-      
+    if(!this.state.personName || !this.state.wish) {     
       alert("Please fill out all the fields!")
     }else{
+      //get the mailbox div and scroll it into view
+      document.getElementById('mainList').scrollIntoView({
+      //   //declaring the behavior of the scroll
+        block: 'start',
+        behaviour: 'smooth'
+      })
       alert("Guess what! Your wish is granted!")
       const dbRef = firebase.database().ref();
       ///push the personName and wish values and push them to firebase
@@ -109,52 +111,39 @@ console.log(newState)
     dbRef.child(wishListRemove).remove();
   };
 
-  // addLike=()=>{
-  // firebase.database().ref(`uniqueKey`).update({this.state.like}
-  // }
-
-  render() {
+    render() {
     return (
       ///everything in this div would be displayed on the screen
       <div className="App">
         <Header
-       formName = {this.state.personName}
-       formText = {this.state.wish}
-       updateForm = {this.handleChange}
-       submitForm = {this.handleSubmit}
-        
+          formName = {this.state.personName}
+          formText = {this.state.wish}
+          updateForm = {this.handleChange}
+          submitForm = {this.handleSubmit}    
         />
-       
-       
-      
-       <ul>
-       {/* //map over each grantedWish . For each grantedWish, return all these things */}
-      {this.state.wishList.map( (grantedWish) => {
-        return(
-          <li key={grantedWish.uniqueKey}>
-          
-          {/* <p>{grantedWish.uniqueKey}</p> */}
-          <p className="recipient">Dear {grantedWish.personName}</p>
-          <p className="content">Your wish: {grantedWish.wish}</p>
-          <p className="status">Status : Granted.</p>
-          <LikeButton 
-          likeId={grantedWish.uniqueKey} likeCount={grantedWish.like}
-          /> 
-          <button onClick={() => this.removeButton(grantedWish.uniqueKey)}><i className="far fa-times-circle"></i></button>
-          
-          </li>
-        
-        )
-      })}
-      </ul>
-      <footer>
-        <p>made by kanu sobti | kanusobti.com</p>
-      </footer>
-
-
+        <ul className="wrapper" id="mainList">
+        {/* //map over each grantedWish . For each grantedWish, return all these things */}
+        {this.state.wishList.map( (grantedWish) => {
+          return(
+            <li key={grantedWish.uniqueKey}>
+            <p className="recipient">Dear {grantedWish.personName}</p>
+            <p className="content">You wished for: {grantedWish.wish}</p>
+            
+            <div className="likeAndRemove">
+              <LikeButton 
+              likeId={grantedWish.uniqueKey} likeCount={grantedWish.like}
+              /> 
+              <button className="remove" onClick={() => this.removeButton(grantedWish.uniqueKey)}><i className="far fa-times-circle"></i></button>  
+            </div>
+            </li>
+          )
+        })}
+        </ul>
+        <footer>
+          <p>made by kanu sobti | kanusobti.com</p>
+        </footer>
       </div>
     );
-
   }///render ends here
 }
 

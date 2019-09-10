@@ -1,4 +1,5 @@
 body{
+    scroll-behavior: smooth;
     background: linear-gradient(180deg, #70e1f5, #ffd194);
     -webkit-animation: AnimationName 30s ease infinite;
     -moz-animation: AnimationName 30s ease infinite;
@@ -29,30 +30,27 @@ header{
 
 .formWrapper {
     display: flex;
-    background: url(../Assets/wall-435372.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background:#ec8864;
     margin: 0 auto;
-    padding: 10%;
+    padding: 6%;
     box-shadow: 10px 10px 0px $mainHeadingColor;
     border: 2px solid $mainHeadingColor;
-    // p{
-    //     padding-top: 7%;
-    // }
+    
 }
 
 .overlay{
     background: rgba(0, 0, 0, 0.2);
+    padding:2%;
+    
 }
 
 .description {
     line-height: 1.5;
-    border-right: 2px solid $baseColor;
-    margin: 0;
-    font-family: $wallFont;
+    font-family: $baseFont;
     color: $formColor;
-    // margin-right:2%;
+    margin-right:2%;
+    padding: 4% 5%;
+
   }
 
   span{
@@ -66,47 +64,99 @@ header{
 
 .form{
     margin-left:2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-input[name="personName"] {
-    padding: 10px 0;
+
+input[name="personName"], textarea {
+    padding: 10px;
     border-radius: 0;
+  
 }
 
 .send{
     width: 100px;
-    margin: 0 auto;
     background: $mainHeadingColor;
     border: none;
     padding: 10px;
     font-size: 1.2rem;
-    color:$formColor;
+    color:$baseColor;
     font-family: $baseFont;
     &:hover,
     &:focus{
         color:$mainHeadingColor;
-        background: #c28c8c;
+        background: #b4d11d;
     }
     &:active{
          border: 2px solid $formColor;
           
     }
 }
+
 input::placeholder,
 textarea::placeholder{
     background: $formColor;
     color: $baseColor;
-
 }
 
 ul{
     display:flex;
     flex-wrap: wrap;
+    margin-top:50px;
+    li{
+        width:calc(100% / 3 - 20px);
+        border:2px solid#b4d11d ;
+        margin:10px;
+        padding:1.5% 0;
+        page-break-inside: avoid;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #ffe791;
+        p{
+            font-weight: 400;
+            word-wrap: break-word;
+        }
+    }
 }
-li{
-    width:calc(100% / 3 - 10px);
-    border:2px solid $mainHeadingColor;
-    margin:5px;
-    page-break-inside: avoid;
+.recipient,
+.content{
+     font-family: 'Ranga', cursive;
+     font-weight: 400;
+     font-size: 1.8rem;
+     padding:1%;
 }
+
+
+.likeAndRemove{
+    display: flex;
+    .likes, .remove{
+        background: transparent;
+        border:none;
+        color: tomato;
+    }
+    .remove{
+        color: $baseColor;
+    }
+}
+
+
+footer{
+    margin:2% 0 0;
+    p{
+        padding: 10px 0;
+        letter-spacing: .5px;
+        color:$formColor;
+        background:#b4d11d;
+        text-align: center;
+        &:hover{
+            color:$mainHeadingColor;
+        }
+    }
+}
+
+  
 
 

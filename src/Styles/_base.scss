@@ -1,8 +1,7 @@
 $baseFont: 'Poppins', sans-serif;
 $headingFont: 'Ranga', cursive;
-$wallFont: 'Fredericka the Great', cursive;
 $baseColor:black;
-$mainHeadingColor:rebeccapurple;
+$mainHeadingColor:#ffe791;
 $formColor: white;
 
 
@@ -31,7 +30,7 @@ h1 {
     font-family: $headingFont;
     font-weight: 700;
     font-size: 6rem;
-    text-shadow: -9px 1px 2px #b4a6a6;
+    // text-shadow: -9px 1px 2px #b4a6a6;
 }
 
 p{
