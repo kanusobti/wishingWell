@@ -121,24 +121,26 @@ class App extends Component {
           updateForm = {this.handleChange}
           submitForm = {this.handleSubmit}    
         />
-        <ul className="wrapper" id="mainList">
-        {/* //map over each grantedWish . For each grantedWish, return all these things */}
-        {this.state.wishList.map( (grantedWish) => {
-          return(
-            <li key={grantedWish.uniqueKey}>
-            <p className="recipient">Dear {grantedWish.personName}</p>
-            <p className="content">You wished for: {grantedWish.wish}</p>
-            
-            <div className="likeAndRemove">
-              <LikeButton 
-              likeId={grantedWish.uniqueKey} likeCount={grantedWish.like}
-              /> 
-              <button className="remove" onClick={() => this.removeButton(grantedWish.uniqueKey)}><i className="far fa-times-circle"></i></button>  
-            </div>
-            </li>
-          )
-        })}
-        </ul>
+        <main className="mainList" id="mainList">
+          <ul className="wrapper">
+          {/* //map over each grantedWish . For each grantedWish, return all these things */}
+          {this.state.wishList.map( (grantedWish) => {
+            return(
+              <li key={grantedWish.uniqueKey}>
+              <p className="recipient">Dear {grantedWish.personName}</p>
+              <p className="content">You wished for: {grantedWish.wish}</p>
+              
+              <div className="likeAndRemove">
+                <LikeButton 
+                likeId={grantedWish.uniqueKey} likeCount={grantedWish.like}
+                /> 
+                <button className="remove" onClick={() => this.removeButton(grantedWish.uniqueKey)}><i className="far fa-times-circle"></i></button>  
+              </div>
+              </li>
+            )
+          })}
+          </ul>
+        </main>
         <footer>
           <p>made by kanu sobti | kanusobti.com</p>
         </footer>

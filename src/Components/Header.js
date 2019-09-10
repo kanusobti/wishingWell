@@ -1,12 +1,16 @@
 import React, { Component} from 'react';
+import Image from '../Assets/headerImage.png';
 
 class Header extends Component{
     render(){
         return(
             <header>
+                <h1>Serve me your wish</h1>
                 <div className="wrapper">
-                    <div className="clearfix">
-                        <h1>Serve me your wish</h1>
+                    <div className="wellImage">
+                        <img src={Image} alt="an image of well with a pitcher aside it" />
+                    </div>
+                    <div className="rightSideHeader">
                         <div className="formWrapper">
                             <p className="description overlay">Law of Attraction works on the basis of clean energy and clear intentions. Sit back and think about what you want to attract into your life. Once you know what you want, <span>wish</span> for it anonymously.</p>
                             <form action = "" className="form">

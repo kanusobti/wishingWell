@@ -23,10 +23,22 @@ body{
 
 header{
     height:100vh;
-    background: url(../Assets/2194-1024.png);
-    background-size: contain;
-    background-repeat: no-repeat;
+    .wrapper{
+        height:86vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap:wrap;
+        .wellImage{
+            width:50%;
+            padding-top: 1rem;
+        }
+        .rightSideHeader{
+            width:50%;
+        }
+    }
 }
+
 
 .formWrapper {
     display: flex;
@@ -35,7 +47,14 @@ header{
     padding: 6%;
     box-shadow: 10px 10px 0px $mainHeadingColor;
     border: 2px solid $mainHeadingColor;
-    
+    .description {
+        line-height: 1.5;
+        font-family: $baseFont;
+        color: $formColor;
+        margin-right:2%;
+        padding: 4% 5%;
+        font-size: 1.2rem;
+    }
 }
 
 .overlay{
@@ -44,24 +63,10 @@ header{
     
 }
 
-.description {
-    line-height: 1.5;
-    font-family: $baseFont;
-    color: $formColor;
-    margin-right:2%;
-    padding: 4% 5%;
-
-  }
-
-  span{
-      text-transform:uppercase;
+span{
+    text-transform:uppercase;
   }
   
-.clearfix{
-    float:right;
-    width:50%;
-}
-
 .form{
     margin-left:2%;
     display: flex;
@@ -72,7 +77,6 @@ header{
 input[name="personName"], textarea {
     padding: 10px;
     border-radius: 0;
-  
 }
 
 .send{
@@ -96,14 +100,18 @@ input[name="personName"], textarea {
 
 input::placeholder,
 textarea::placeholder{
-    // background: $formColor;
+    background: $formColor;
     color: $baseColor;
+}
+
+.mainList{
+    height:90vh;
+    margin:3% 0 0;
 }
 
 ul{
     display:flex;
     flex-wrap: wrap;
-    margin-top:50px;
     li{
         width:calc(100% / 3 - 20px);
         border:2px solid#b4d11d ;
@@ -142,9 +150,7 @@ ul{
     }
 }
 
-
 footer{
-    margin:2% 0 0;
     p{
         padding: 10px 0;
         letter-spacing: .5px;

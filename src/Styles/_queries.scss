@@ -1,0 +1,115 @@
+@media (max-width: 1397px){
+    input, textarea{
+        font-size: 1.1rem;
+    
+    }
+
+    .formWrapper{
+        padding:5%;
+        .description{
+            font-size: 1.1rem;
+        }
+    }
+
+}//1395px ends
+
+// @media (max-width:1326px) {
+//     h1{
+//         font-size:5rem; 
+//     }
+    
+// }//1326px ends here
+
+@media (max-width:1306px) {
+    .formWrapper{
+        padding:4%;
+    }
+
+}//1306px ends here
+
+@media (max-width:1271px) {
+    input, textarea {
+        width:250px;
+    }
+
+}//1271px ends
+
+@media (max-width:1142px) {
+    input, textarea{
+        font-size: 1rem;
+    
+    }
+
+    .formWrapper{
+        padding:4%;
+        .description{
+            font-size: 1rem;
+        }
+    }
+
+    h1{
+        font-size:5.5rem; 
+    }
+
+}//1142px ends
+
+@media (max-width:1100px) {
+    .formWrapper{
+        .description{
+            display: none;
+        }
+    }
+    
+    input, textarea {
+        width:100%;
+    }
+
+    header{
+        .wrapper{
+            .wellImage{
+                width:60%;
+            }
+            .rightSideHeader{
+                width:40%;
+            }
+        }
+    }
+
+    // h1{
+    //     font-size: 3.8rem;
+    // }
+
+}//1100px ends
+
+@media (max-width:940px) {
+    .send{
+        font-size: 1.1rem;
+        padding: 7px;
+        width:80px;
+    }
+    header{
+        .wrapper{
+            margin-top:-3%;
+        }
+    }
+
+
+}//940px ends
+
+@media (max-width:786px) {
+    header{
+        .wrapper{
+            .wellImage{
+                width:65%;
+            }
+            .rightSideHeader{
+                width:35%;
+            }
+        }
+    }
+
+
+}//786px ends
+
+
+
