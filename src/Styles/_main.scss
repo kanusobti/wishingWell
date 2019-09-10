@@ -1,5 +1,5 @@
 body{
-    scroll-behavior: smooth;
+    scroll-behavior: smooth;   
     background: linear-gradient(180deg, #70e1f5, #ffd194);
     -webkit-animation: AnimationName 30s ease infinite;
     -moz-animation: AnimationName 30s ease infinite;
@@ -23,7 +23,6 @@ body{
 
 header{
     height:100vh;
-    min-height:600px;
     .wrapper{
         height:86vh;
         display:flex;
@@ -106,8 +105,8 @@ textarea::placeholder{
 }
 
 .mainList{
-    height:90vh;
-    margin:3% 0 0;
+    // height:90vh;
+    margin:3% 0;
 }
 
 ul{

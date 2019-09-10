@@ -173,18 +173,21 @@
         font-size: 4rem;
     }
 
-    ul{
-        li{
-            width:calc(100% - 20px);
-            padding: 2.5% 0;
-        }
-    }
-
+    
 }
 
 @media (max-width:410px) {
     h1{
         font-size: 3rem;
+    }
+    .mainList{
+        margin:2% 0;
+    }
+    ul{
+        li{
+            width:calc(100% - 20px);
+            padding: 2.5% 0;
+        }
     }
 }
 
