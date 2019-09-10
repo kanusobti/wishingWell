@@ -1,13 +1,12 @@
 ///Import React, firebase and Scss file.
 ///Make a constructor and define the state and put all those variables which would change like personName and wish. Make an empty array like wishList so that these variables are pushed inside it.
-///The render method would return the App on the screen. Write header, main and footer.
+///The render method would return the App on the screen. Write header, main and footer and use .map array method to itierate though it.
 ///Make header as a separate component and pass props to it for the personName, wish , handlechange and handleSubmit.
 //In App.js , while working on handleChange, setState so that event.target.name gets event.target.value(that would be passed as props.)
 ////In App.js, on handleSubmit prevent the default first and check error handling if the texts are filled. On clicking it push the setState values to the firebase and empty the fields after use.
-////Write function for removeButton and remove it from firebase. Use .child 
-
-
-
+////Write function for removeButton and remove it from firebase. Use .child else it would remove all the buttons.this way it would remove the one that is clicked with unique id.
+///For like button , make a separate component, add props to constructor so  that the constructor gets the stored liked value from App.js and then use .update to work on a particular node.
+///Use component did Mount to retrieve the existing data from firebase. Make a new array called newState as a copy and use for in loop to each object and display it unique id, likes, name nd wish on the page loads
 
 import React, { Component} from 'react';
 import firebase from '../firebase';
